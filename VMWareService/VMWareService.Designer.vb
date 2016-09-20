@@ -22,10 +22,10 @@ Partial Class VMWareService
     <MTAThread()>
     <System.Diagnostics.DebuggerNonUserCode()>
     Shared Sub Main(ByVal cmdArgs() As String)
-        If Environment.UserInteractive Then
-            Dim service1 As New VMWareService({})
-            service1.Test()
-        End If
+        'If Environment.UserInteractive Then
+        '    Dim service1 As New VMWareService({})
+        '    service1.Test()
+        'End If
         Dim ServicesToRun() As System.ServiceProcess.ServiceBase
         ServicesToRun = New System.ServiceProcess.ServiceBase() {New VMWareService(cmdArgs)}
         System.ServiceProcess.ServiceBase.Run(ServicesToRun)

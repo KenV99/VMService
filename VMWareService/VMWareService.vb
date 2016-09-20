@@ -1,9 +1,6 @@
 ﻿Public Class VMWareService
-    Private eventId As Integer = 0
-    Declare Auto Function SetServiceStatus Lib "advapi32.dll" (ByVal handle As IntPtr, ByRef serviceStatus As ServiceStatus) As Boolean
     Dim mVIX As VIX
     Protected Overrides Sub OnStart(ByVal args() As String)
-
         MyBase.OnStart(args)
         Using ssc As New ServiceStatusController(ServiceFunctions.SERVICE_START, Me.ServiceHandle)
             Dim success As Boolean
@@ -69,14 +66,14 @@
             regKey.SetValue("ImagePath", newImagePath)
         End If
     End Sub
-    Sub Test()
-        UpdateImagePath("G:\Ken User\My Documents\Virtual Machines\ES-UServer\ES-UServer.vmx")
-        Dim bRet As Boolean
-        mVIX = New VIX("G:\Ken User\My Documents\Virtual Machines\ES-UServer\ES-UServer.vmx")
-        bRet = mVIX.VMXStart()
-        Stop
-        bRet = mVIX.IsRunning()
-        bRet = mVIX.VMXStop
-        Stop
-    End Sub
+    'Sub Test()
+    '    UpdateImagePath("G:\Ken User\My Documents\Virtual Machines\ES-UServer\ES-UServer.vmx")
+    '    Dim bRet As Boolean
+    '    mVIX = New VIX("G:\Ken User\My Documents\Virtual Machines\ES-UServer\ES-UServer.vmx")
+    '    bRet = mVIX.VMXStart()
+    '    Stop
+    '    bRet = mVIX.IsRunning()
+    '    bRet = mVIX.VMXStop
+    '    Stop
+    'End Sub
 End Class
