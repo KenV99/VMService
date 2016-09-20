@@ -78,16 +78,15 @@ Partial Class VMWareService
             If My.Computer.FileSystem.FileExists(vmxpath) Then
                 If (cmdArgs.Count() > 1) Then
                     If cmdArgs(1) = "True" Then
-
                         UpdateImagePath(vmxpath)
                         EventLog1.WriteEntry("VMXpath updated")
+                        mVIX = New VIX(vmxpath, EventLog1)
                     End If
                 End If
             Else
                 EventLog1.WriteEntry("VMXpath invalid: " + vmxpath, EventLogEntryType.Error)
                 Throw New System.Exception("VMXpath invalid: " + vmxpath)
             End If
-            mVIX = New VIX(vmxpath, EventLog1)
         Else
             EventLog1.WriteEntry("VMXpath missing", EventLogEntryType.Error)
             Throw New System.Exception("Path to VMX file missing")

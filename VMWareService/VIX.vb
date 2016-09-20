@@ -21,7 +21,6 @@
         AppPath = AppPath + "\VMWare VIX\vmrun.exe"
         Return AppPath
     End Function
-
     Private Sub InitializeCmds()
         cmdstart = "start """ + VMXpath + """ nogui"
         cmdstop = "stop """ + VMXpath + """ soft"
@@ -29,7 +28,6 @@
         cmdresume = "unpause """ + VMXpath + """"
         cmdlist = "list"
     End Sub
-
     Public Function VMXStart() As Boolean
         Dim sRet As String
         sRet = RunCommand(cmdstart)
@@ -90,8 +88,8 @@
         lines = soutput.Replace(vbCrLf, "~").Split("~")
         nTmp = lines(0).Split(":")
         numVMs_running = Int(nTmp(1))
-        Array.Copy(lines, 1, lines, 0, lines.Length - 1)
         If numVMs_running > 0 Then
+            Array.Copy(lines, 1, lines, 0, lines.Length - 1)
             VMs_running = New ArrayList
             For Each line In lines
                 If line <> "" Then
