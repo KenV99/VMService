@@ -43,7 +43,6 @@ Partial Class VMWareService
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.EventLog1 = New System.Diagnostics.EventLog()
-        'Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.EventLog1, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'VMWareService
@@ -80,7 +79,6 @@ Partial Class VMWareService
                     If cmdArgs(1) = "True" Then
                         UpdateImagePath(vmxpath)
                         EventLog1.WriteEntry("VMXpath updated")
-                        mVIX = New VIX(vmxpath, EventLog1)
                     End If
                 End If
             Else
@@ -91,6 +89,7 @@ Partial Class VMWareService
             EventLog1.WriteEntry("VMXpath missing", EventLogEntryType.Error)
             Throw New System.Exception("Path to VMX file missing")
         End If
+        mVIX = New VIX(vmxpath, EventLog1)
     End Sub
 End Class
 

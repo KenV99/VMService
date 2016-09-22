@@ -42,8 +42,6 @@ Public Class ServiceStatusController : Implements IDisposable
     Public Sub Success()
         UpdateStatus(successCode)
     End Sub
-
-
     ' IDisposable
     Protected Overridable Sub Dispose(disposing As Boolean)
         If Not disposedValue Then
