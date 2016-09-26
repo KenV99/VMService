@@ -33,8 +33,8 @@
         'ServiceInstaller1
         '
         Me.ServiceInstaller1.Description = "Runs VM via VMWare Player and VIX"
-        Me.ServiceInstaller1.DisplayName = "VMWare VMX Service"
-        Me.ServiceInstaller1.ServiceName = "VMWareService"
+        Me.ServiceInstaller1.DisplayName = "VMX Service"
+        Me.ServiceInstaller1.ServiceName = "VMXService"
         Me.ServiceInstaller1.DelayedAutoStart = True
         Me.ServiceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic
         'Me.ServiceInstaller1.ServicesDependedOn = {"vm86"}

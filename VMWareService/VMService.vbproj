@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C25B2F00-9BCB-4048-B876-29052E534534}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>VMWareService.VMWareService</StartupObject>
-    <RootNamespace>VMWareService</RootNamespace>
-    <AssemblyName>VMWareService</AssemblyName>
+    <StartupObject>VMService.VMService</StartupObject>
+    <RootNamespace>VMService</RootNamespace>
+    <AssemblyName>VMService</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -24,8 +24,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>VMService</ProductName>
+    <PublisherName>KenV99</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -38,7 +40,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>VMWareService.xml</DocumentationFile>
+    <DocumentationFile>VMService.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -48,7 +50,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>VMWareService.xml</DocumentationFile>
+    <DocumentationFile>VMService.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -112,11 +114,11 @@
     <Compile Include="ProjectInstaller.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="VMWareService.vb">
+    <Compile Include="VMService.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="VMWareService.Designer.vb">
-      <DependentUpon>VMWareService.vb</DependentUpon>
+    <Compile Include="VMService.Designer.vb">
+      <DependentUpon>VMService.vb</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
@@ -140,8 +142,8 @@
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VMWareService.resx">
-      <DependentUpon>VMWareService.vb</DependentUpon>
+    <EmbeddedResource Include="VMService.resx">
+      <DependentUpon>VMService.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

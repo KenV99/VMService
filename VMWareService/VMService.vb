@@ -1,4 +1,4 @@
-﻿Public Class VMWareService
+﻿Public Class VMService
     Dim mVIX As VIX
     Protected Overrides Sub OnStart(ByVal args() As String)
         MyBase.OnStart(args)

@@ -3,7 +3,7 @@ Imports System.Diagnostics
 Imports System.Runtime.InteropServices
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class VMWareService
+Partial Class VMService
     Inherits System.ServiceProcess.ServiceBase
 
     'UserService overrides dispose to clean up the component list.
@@ -22,12 +22,8 @@ Partial Class VMWareService
     <MTAThread()>
     <System.Diagnostics.DebuggerNonUserCode()>
     Shared Sub Main(ByVal cmdArgs() As String)
-        'If Environment.UserInteractive Then
-        '    Dim service1 As New VMWareService({})
-        '    service1.Test()
-        'End If
         Dim ServicesToRun() As System.ServiceProcess.ServiceBase
-        ServicesToRun = New System.ServiceProcess.ServiceBase() {New VMWareService(cmdArgs)}
+        ServicesToRun = New System.ServiceProcess.ServiceBase() {New VMService(cmdArgs)}
         System.ServiceProcess.ServiceBase.Run(ServicesToRun)
     End Sub
 
@@ -47,7 +43,7 @@ Partial Class VMWareService
         '
         'VMWareService
         '
-        Me.ServiceName = "VMWareService"
+        Me.ServiceName = "VMXService"
         CType(Me.EventLog1, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -62,7 +58,7 @@ Partial Class VMWareService
         MyBase.CanStop = True
         MyBase.CanShutdown = True
 
-        Dim eventSourceName As String = "VMWareServiceX"
+        Dim eventSourceName As String = "VMXServiceX"
         Dim logName As String = "VMXServiceLog"
         EventLog1 = New System.Diagnostics.EventLog()
         If (Not System.Diagnostics.EventLog.SourceExists(eventSourceName)) Then

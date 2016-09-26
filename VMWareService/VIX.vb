@@ -1,7 +1,7 @@
 ﻿Public Class VIX
     Public Shared Property VMXpath As String
     Public Shared Property VIXPath As String
-    Private cmdstart, cmdstop, cmdpause, cmdresume, cmdlist As String
+    Private cmdstart, cmdstop, cmdkill, cmdpause, cmdresume, cmdlist As String
     Public Shared Property numVMs_running As Integer
     Public Shared Property VMs_running As ArrayList
     Private Logger As Object
@@ -24,6 +24,7 @@
     Private Sub InitializeCmds()
         cmdstart = "start """ + VMXpath + """ nogui"
         cmdstop = "stop """ + VMXpath + """ soft"
+        cmdkill = "stop """ + VMXpath + ""
         cmdpause = "pause """ + VMXpath + """"
         cmdresume = "unpause """ + VMXpath + """"
         cmdlist = "list"
@@ -37,6 +38,15 @@
     Public Function VMXStop() As Boolean
         Dim sRet As String
         sRet = RunCommand(cmdstop)
+        Dim i As Integer
+        For i = 1 To 12
+            If IsRunning() Then
+                Threading.Thread.Sleep(5000)
+            Else
+                Return True
+            End If
+        Next
+        sRet = RunCommand(cmdkill)
         Return Not IsRunning()
     End Function
 
