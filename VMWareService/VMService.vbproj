@@ -147,6 +147,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Inno Setup\After Install.rtf" />
+    <None Include="Inno Setup\Before Install.rtf" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -175,6 +177,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Inno Setup\LICENSE.txt" />
+    <Content Include="Inno Setup\README.txt" />
+    <Content Include="Inno Setup\setup.exe" />
+    <Content Include="Inno Setup\VMWareService.iss" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
