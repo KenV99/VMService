@@ -4,7 +4,7 @@
 #define MyAppName "VMService"
 #define MyAppVersion "1.0.0.9"
 #define MyAppPublisher "KenV99"
-#define MyAppExeName "VMService.exe"
+#define MyAppExeName "UpdateServiceVMX.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -32,11 +32,16 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
 Source: "G:\Ken User\My Documents\Visual Studio 2015\Projects\VMWareService\VMWareService\bin\Release\app.publish\VMService.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "G:\Ken User\My Documents\Visual Studio 2015\Projects\VMWareServiceExtra\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "G:\Ken User\My Documents\Visual Studio 2015\Projects\VMWareServiceExtra\README.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "README.txt"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: "..\..\VMWareService\VMWareService\bin\Release\app.publish\Application Files\VMService_1_0_0_11\VMService.exe.manifest"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\VMWareService\VMWareService\bin\Release\app.publish\Application Files\VMService_1_0_0_11\VMService.exe.config.deploy"; DestDir: "{app}"; DestName: "VMService.exe.config"; Flags: ignoreversion
+Source: "..\bin\Release\app.publish\Application Files\VMService_1_0_0_12\VMService.exe.manifest"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\app.publish\Application Files\VMService_1_0_0_12\VMService.exe.config.deploy"; DestDir: "{app}"; DestName: "VMService.exe.config"; Flags: ignoreversion
+Source: "..\..\UpdateServiceVMX\bin\Release\UpdateServiceVMX.vshost.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\UpdateServiceVMX\bin\Release\UpdateServiceVMX.vshost.exe.manifest"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\UpdateServiceVMX\bin\Release\UpdateServiceVMX.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\UpdateServiceVMX\bin\Release\UpdateServiceVMX.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\UpdateServiceVMX\bin\Release\UpdateServiceVMX.vshost.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
