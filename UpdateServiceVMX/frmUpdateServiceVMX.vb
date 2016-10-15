@@ -93,7 +93,7 @@ Public Class frmUpdateService
         Me.Close()
     End Sub
     Private Function StopService() As Boolean
-        Dim sc As New ServiceController("VMXService"), x As ServiceControllerStatus
+        Dim sc As New ServiceController("VMXService")
         If sc.Status() <> ServiceControllerStatus.Stopped Then
             Me.Cursor = Cursors.WaitCursor
             sc.Stop()
