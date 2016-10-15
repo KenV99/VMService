@@ -56,7 +56,7 @@
     End Sub
     Public Sub UpdateImagePath(vmxpath As String)
         Dim regKey As Object, imagePath As String, imagePathS As String, args As String(), servicepath As String, newImagePath As String
-        regKey = My.Computer.Registry.LocalMachine.OpenSubKey("SYSTEM\CurrentControlSet\Services\VMWareService")
+        regKey = My.Computer.Registry.LocalMachine.OpenSubKey("SYSTEM\CurrentControlSet\Services\VMXService")
         If regKey IsNot Nothing Then
             imagePath = regKey.GetValue("ImagePath")
             imagePathS = imagePath.Replace(""" """, "~")
